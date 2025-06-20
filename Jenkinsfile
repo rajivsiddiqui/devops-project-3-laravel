@@ -12,6 +12,7 @@ pipeline {
         }
         stage('Test') {
             steps {
+                sh 'sudo su - jenkins'
                 sh 'php artisan test'
             }
         }
