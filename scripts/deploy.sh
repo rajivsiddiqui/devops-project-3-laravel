@@ -1,7 +1,8 @@
 #!/usr/bin/env bash
 
 # CD into the code directory
-cd /var/www/larademo
+#cd /var/www/larademo
+cd /var/www/devops-project-3-laravel
 
 # enter a maintainance mode
 php artisan down
@@ -18,7 +19,7 @@ php artisan migrate --force
 # cache the app's config for speed boosting
 php artisan config:cache
 
-# run other necessary commands for your spcecif application
+# if nedd to run any other commands for your application
 # ex
 # php artisan queue:work
 
