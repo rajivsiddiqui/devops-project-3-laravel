@@ -1,21 +1,32 @@
 pipeline {
-    agent any
+    agent {
+     node {
+         label "laravel"
+     }
+ }
+
 
     stages {
-        stage('Build') {
+        stage('checkout') {
             steps {
-                sh 'composer install'
-                sh 'npm install'
-                sh 'npm run build'
-                // if we need any other commands to compile
+                git branch: 'main', url: 'https://github.com/rajivsiddiqui/devops-project-3-laravel.git'
             }
         }
-        stage('Test') {
-            steps {
-                sh 'sudo su - jenkins'
-                sh 'php artisan test'
-            }
-        }
+        
+        // stage('Build') {
+        //     steps {
+        //         sh 'composer install'
+        //         sh 'npm install'
+        //         sh 'npm run build'
+        //         // if we need any other commands to compile
+        //     }
+        // }
+        // stage('Test') {
+        //     steps {
+        //         sh 'sudo su - jenkins'
+        //         sh 'php artisan test'
+        //     }
+        // }
         
         // stage('Deploy to prodcution') {
 
