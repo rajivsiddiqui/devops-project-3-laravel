@@ -21,12 +21,11 @@ pipeline {
                 // if we need any other commands to compile
             }
         }
-        // stage('Test') {
-        //     steps {
-        //         sh 'sudo su - jenkins'
-        //         sh 'php artisan test'
-        //     }
-        // }
+        stage('Test') {
+            steps {
+                sh 'php artisan test'
+            }
+        }
         
         // stage('Deploy to prodcution') {
 
