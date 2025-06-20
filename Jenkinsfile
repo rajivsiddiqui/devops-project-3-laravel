@@ -13,14 +13,14 @@ pipeline {
             }
         }
         
-        // stage('Build') {
-        //     steps {
-        //         sh 'composer install'
-        //         sh 'npm install'
-        //         sh 'npm run build'
-        //         // if we need any other commands to compile
-        //     }
-        // }
+        stage('Build') {
+            steps {
+                sh 'composer install'
+                sh 'npm install'
+                sh 'npm run build'
+                // if we need any other commands to compile
+            }
+        }
         // stage('Test') {
         //     steps {
         //         sh 'sudo su - jenkins'
