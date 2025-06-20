@@ -54,7 +54,7 @@ pipeline {
         failure {  
              mail bcc: '', body: "<b>Failed Jenkins Build</b><br>Project: ${env.JOB_NAME} \
              <br>Build Number: ${env.BUILD_NUMBER} <br> URL of the build: ${env.BUILD_URL}", cc: '', \
-             charset: 'UTF-8', from: 'jenkins@jenkins.test', mimeType: 'text/html', replyTo: 'test@youremail.com', \
+             charset: 'UTF-8', from: 'rajivsiddiqui21@gmail.com', mimeType: 'text/html', replyTo: 'rajivsiddiqui21@gmail.com', \
              subject: "ERROR CI: Project name -> ${env.JOB_NAME}", \
              to: "rajivsiddiqui21@gmail.com";  \
         }
@@ -62,7 +62,7 @@ pipeline {
         success {  
              mail bcc: '', body: "<b>Success Jenkins Build</b><br>Project: ${env.JOB_NAME} \
              <br>Build Number: ${env.BUILD_NUMBER} <br> URL of the build: ${env.BUILD_URL}", cc: '', \
-             charset: 'UTF-8', from: 'jenkins@jenkins.test', mimeType: 'text/html', replyTo: 'test@youremail.com', \
+             charset: 'UTF-8', from: 'rajivsiddiqui21@gmail.com', mimeType: 'text/html', replyTo: 'rajivsiddiqui21@gmail.com', \
              subject: "SUCCESS CI: Project name -> ${env.JOB_NAME}", \
              to: "rajivsiddiqui21@gmail.com";  \
          } 
