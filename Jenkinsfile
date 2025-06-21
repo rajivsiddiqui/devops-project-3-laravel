@@ -12,8 +12,8 @@ pipeline {
                 git branch: 'main', url: 'https://github.com/rajivsiddiqui/devops-project-3-laravel.git'
             }
         }
-        
-        // stage('Build') {
+        //Build stage
+        stage('Build') {
             steps {
                 sh 'composer install'
                 sh 'npm install'
@@ -21,6 +21,7 @@ pipeline {
                 // if we need any other commands to compile
             }
         }
+        //Test stage
         stage('Test') {
             steps {
                 sh 'php artisan test'
