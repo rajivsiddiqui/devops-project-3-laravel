@@ -26,6 +26,14 @@ pipeline {
                 sh 'php artisan test'
             }
         }
+        // deploy to staging 
+        stage('Deploy to staging') {
+
+            steps {
+                sh 'ssh ubuntu@98.84.118.215 -o StrictHostKeyChecking=no "bash /var/www/devops-project-3-laravel/scripts/deploy.sh" '
+            }
+        }
+
         // deploy to productoin 
         stage('Deploy to prodcution') {
 
@@ -49,24 +57,24 @@ pipeline {
 
     // apply to the whole pipeline
 
-    post {
-     // send email notification the specicied addresses if the build fails
-        failure {  
-             mail bcc: '', body: "<b>Failed Jenkins Build</b><br>Project: ${env.JOB_NAME} \
-             <br>Build Number: ${env.BUILD_NUMBER} <br> URL of the build: ${env.BUILD_URL}", cc: '', \
-             charset: 'UTF-8', from: 'rajivsiddiqui21@gmail.com', mimeType: 'text/html', replyTo: 'rajivsiddiqui21@gmail.com', \
-             subject: "ERROR CI: Project name -> ${env.JOB_NAME}", \
-             to: "rajivsiddiqui21@gmail.com";  \
-        }
-        // send email notification the specicied addresses if the build fails
-        success {  
-             mail bcc: '', body: "<b>Success Jenkins Build</b><br>Project: ${env.JOB_NAME} \
-             <br>Build Number: ${env.BUILD_NUMBER} <br> URL of the build: ${env.BUILD_URL}", cc: '', \
-             charset: 'UTF-8', from: 'rajivsiddiqui21@gmail.com', mimeType: 'text/html', replyTo: 'rajivsiddiqui21@gmail.com', \
-             subject: "SUCCESS CI: Project name -> ${env.JOB_NAME}", \
-             to: "rajivsiddiqui21@gmail.com";  \
-         } 
+    // post {
+    //  // send email notification the specicied addresses if the build fails
+    //     failure {  
+    //          mail bcc: '', body: "<b>Failed Jenkins Build</b><br>Project: ${env.JOB_NAME} \
+    //          <br>Build Number: ${env.BUILD_NUMBER} <br> URL of the build: ${env.BUILD_URL}", cc: '', \
+    //          charset: 'UTF-8', from: 'rajivsiddiqui21@gmail.com', mimeType: 'text/html', replyTo: 'rajivsiddiqui21@gmail.com', \
+    //          subject: "ERROR CI: Project name -> ${env.JOB_NAME}", \
+    //          to: "rajivsiddiqui21@gmail.com";  \
+    //     }
+    //     // send email notification the specicied addresses if the build fails
+    //     success {  
+    //          mail bcc: '', body: "<b>Success Jenkins Build</b><br>Project: ${env.JOB_NAME} \
+    //          <br>Build Number: ${env.BUILD_NUMBER} <br> URL of the build: ${env.BUILD_URL}", cc: '', \
+    //          charset: 'UTF-8', from: 'rajivsiddiqui21@gmail.com', mimeType: 'text/html', replyTo: 'rajivsiddiqui21@gmail.com', \
+    //          subject: "SUCCESS CI: Project name -> ${env.JOB_NAME}", \
+    //          to: "rajivsiddiqui21@gmail.com";  \
+    //      } 
  
-    }
+    // }
 
 }
