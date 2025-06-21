@@ -30,7 +30,7 @@ pipeline {
         stage('Deploy to staging') {
 
             steps {
-                sh 'ssh ubuntu@98.84.118.215 -o StrictHostKeyChecking=no "bash /var/www/devops-project-3-laravel/scripts/deploy.sh" '
+                sh 'ssh ubuntu@98.84.118.215 -o StrictHostKeyChecking=no "bash /var/www/larademo/scripts/deploy.sh" '
             }
         }
 
@@ -45,8 +45,8 @@ pipeline {
         // stage('Deploy to production') {
 
         //     input {
-        //         message "Shall we deploy production?"
-        //         ok "Please go ahead"
+        //         message "Do you want to deploy to production?"
+        //         ok "Yes"
         //     }
 
         //     steps {
