@@ -13,34 +13,34 @@ pipeline {
             }
         }
         
-        stage('Build') {
-            steps {
-                sh 'composer install'
-                sh 'npm install'
-                sh 'npm run build'
-                // if we need any other commands to compile
-            }
-        }
-        stage('Test') {
-            steps {
-                sh 'php artisan test'
-            }
-        }
+        // stage('Build') {
+        //     steps {
+        //         sh 'composer install'
+        //         sh 'npm install'
+        //         sh 'npm run build'
+        //         // if we need any other commands to compile
+        //     }
+        // }
+        // stage('Test') {
+        //     steps {
+        //         sh 'php artisan test'
+        //     }
+        // }
         // deploy to staging 
-        stage('Deploy to staging') {
+        // stage('Deploy to staging') {
 
-            steps {
-                sh 'ssh ubuntu@98.84.118.215 -o StrictHostKeyChecking=no "bash /var/www/larademo/scripts/deploy.sh" '
-            }
-        }
+        //     steps {
+        //         sh 'ssh ubuntu@98.84.118.215 -o StrictHostKeyChecking=no "bash /var/www/larademo/scripts/deploy.sh" '
+        //     }
+        // }
 
         // deploy to productoin 
-        stage('Deploy to prodcution') {
+        // stage('Deploy to prodcution') {
 
-            steps {
-                sh 'ssh ubuntu@98.81.181.124 -o StrictHostKeyChecking=no "bash /var/www/devops-project-3-laravel/scripts/deploy.sh" '
-            }
-        }
+        //     steps {
+        //         sh 'ssh ubuntu@98.81.181.124 -o StrictHostKeyChecking=no "bash /var/www/devops-project-3-laravel/scripts/deploy.sh" '
+        //     }
+        // }
 
         // stage('Deploy to production') {
 
