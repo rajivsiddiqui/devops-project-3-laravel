@@ -14,18 +14,18 @@ pipeline {
         }
         
         // stage('Build') {
-        //     steps {
-        //         sh 'composer install'
-        //         sh 'npm install'
-        //         sh 'npm run build'
-        //         // if we need any other commands to compile
-        //     }
-        // }
-        // stage('Test') {
-        //     steps {
-        //         sh 'php artisan test'
-        //     }
-        // }
+            steps {
+                sh 'composer install'
+                sh 'npm install'
+                sh 'npm run build'
+                // if we need any other commands to compile
+            }
+        }
+        stage('Test') {
+            steps {
+                sh 'php artisan test'
+            }
+        }
         // deploy to staging 
         // stage('Deploy to staging') {
 
