@@ -35,7 +35,7 @@ pipeline {
         //     }
         // }
 
-        deploy to productoin 
+        //deploy to productoin 
         stage('Deploy to prodcution') {
 
             steps {
