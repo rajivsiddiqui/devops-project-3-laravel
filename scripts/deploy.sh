@@ -1,8 +1,7 @@
 #!/usr/bin/env bash
 
 # CD into the code directory
-#cd /var/www/larademo
-cd /var/www/devops-project-3-laravel
+cd /var/www/larademo
 
 # enter a maintainance mode
 php artisan down
