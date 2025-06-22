@@ -39,7 +39,7 @@ pipeline {
         stage('Deploy to prodcution') {
 
             steps {
-                sh 'ssh ubuntu@54.174.100.26 -o StrictHostKeyChecking=no "bash /var/www/devops-project-3-laravel/scripts/deploy.sh" '
+                sh 'ssh ubuntu@54.174.100.26 -o StrictHostKeyChecking=no "bash /var/www/larademo/scripts/deploy.sh" '
             }
         }
 
