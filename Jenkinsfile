@@ -35,13 +35,13 @@ pipeline {
         //     }
         // }
 
-        // deploy to productoin 
-        // stage('Deploy to prodcution') {
+        deploy to productoin 
+        stage('Deploy to prodcution') {
 
-        //     steps {
-        //         sh 'ssh ubuntu@98.81.181.124 -o StrictHostKeyChecking=no "bash /var/www/devops-project-3-laravel/scripts/deploy.sh" '
-        //     }
-        // }
+            steps {
+                sh 'ssh ubuntu@54.174.100.26 -o StrictHostKeyChecking=no "bash /var/www/devops-project-3-laravel/scripts/deploy.sh" '
+            }
+        }
 
         // stage('Deploy to production') {
 
