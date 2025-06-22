@@ -28,15 +28,19 @@ pipeline {
             }
         }
         // deploy to staging 
-        // stage('Deploy to staging') {
+        stage('Deploy to staging') {
 
-        //     steps {
-        //         sh 'ssh ubuntu@98.84.118.215 -o StrictHostKeyChecking=no "bash /var/www/larademo/scripts/deploy.sh" '
-        //     }
-        // }
+            steps {
+                sh 'ssh ubuntu@18.212.99.35 -o StrictHostKeyChecking=no "bash /var/www/larademo/scripts/deploy.sh" '
+            }
+        }
 
         //deploy to productoin 
         stage('Deploy to prodcution') {
+            input {
+                message "Want to deploy to production?"
+                ok "Yes"
+            }
 
             steps {
                 sh 'ssh ubuntu@54.174.100.26 -o StrictHostKeyChecking=no "bash /var/www/larademo/scripts/deploy.sh" '
